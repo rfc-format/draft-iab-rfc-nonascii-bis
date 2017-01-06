@@ -1,16 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="US-ASCII"?>
 
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
-<!ENTITY RFC0020 SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.0020.xml">
-<!ENTITY STD64 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3550.xml">
+
 <!ENTITY RFC4475 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.4475.xml">
 <!ENTITY RFC6949 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6949.xml">
 <!ENTITY RFC7322 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.7322.xml">
 <!ENTITY RFC7564 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.7564.xml">
 <!ENTITY RFC7613 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.7613.xml">
-<!ENTITY I-D.iab-xml2rfc SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.iab-xml2rfc.xml">
 ]>
 <?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
+
 <?rfc toc="yes"?>
 <?rfc tocompact="yes"?>
 <?rfc tocdepth="3"?>
@@ -21,9 +20,10 @@
 <?rfc inline="yes"?>
 <?rfc compact="yes"?>
 <?rfc subcompact="no"?>
-<rfc category="info" docName="draft-iab-rfc-nonascii-02" ipr="trust200902" updates="7322">
+
+<rfc submissionType="IAB" consensus="yes" category="info" number="7997" ipr="trust200902" updates="7322">
 <front>
- <title abbrev="non-ASCII in RFCs">The Use of Non-ASCII Characters in RFCs</title>
+ <title abbrev="Non-ASCII in RFCs">The Use of Non-ASCII Characters in RFCs</title>
 
  <author fullname="Heather Flanagan" initials="H." role="editor"
             surname="Flanagan">
@@ -42,7 +42,7 @@
    </address>
  </author>
 
- <date month="April" year="2016" day="25"/>
+ <date month="December" year="2016"/>
 
  <area>General</area>
  <workgroup>Internet Architecture Board</workgroup>
@@ -56,10 +56,10 @@ the use of non-ASCII characters in RFCs.  While English remains the
 required language of the Series, the encoding of future RFCs will
 be in UTF-8, allowing for a broader range of characters than typically
 used in the English language.  This document describes the RFC Editor 
-requirements and guidance regarding the use of non-ASCII characters in RFCs.
+requirements and gives guidance regarding the use of non-ASCII characters in RFCs.
    </t>
    <t>
-This document updates RFC 7322. Please review the PDF version of this draft.
+This document updates RFC 7322. Please view this document in PDF form to see the full text.
    </t>
  </abstract>
 </front>
@@ -73,7 +73,7 @@ Please review the PDF version of this draft.
 </t>
 <t>
 For much of the history of the RFC Series, the character encoding used
-for RFCs has been <xref target="RFC0020">ASCII</xref>.  
+for RFCs has been <xref target="RFC20">ASCII</xref>.  
 This was a sensible choice at the time: the language of the Series has
 always been English, a language that primarily uses ASCII-encoded characters 
 (ignoring for a moment words borrowed from more richly decorated alphabets); 
@@ -86,14 +86,14 @@ exclusive character encoding for the Series.  The increasing need for
 easily readable, internationalized content suggests it is time to allow 
 non-ASCII characters in RFCs where necessary.  To support this move away 
 from ASCII, RFCs will switch to supporting UTF-8 as the default character 
-encoding and allow support for a broad range of Unicode character support. 
-<xref target="UnicodeCurrent"/>  Note that the RFC Editor may reject any 
-codepoint that does not render adequately in enough formats or on in enough 
-rendering engines using the current tooling.
+encoding and will allow support for a broad range of Unicode characters 
+<xref target="UnicodeCurrent"/>.  Note that the RFC Editor may reject any code point that does not render 
+adequately across all formats or in enough rendering engines using the v3
+tooling.
 </t>
 <t>
 Given the continuing goal of maximum readability across platforms, the
-use of non-ASCII characters should be limited in a document to only where 
+use of non-ASCII characters should be limited to only where 
 necessary within the text.  This document describes the rules under which 
 non-ASCII characters may be used in an RFC.  These rules will be applied 
 as the necessary changes are made to submission checking and editorial
@@ -102,7 +102,11 @@ tools.
 <t>
 This document updates the <xref target="RFC7322">RFC Style Guide</xref>.
 </t>
-<t>The details described in this document are expected to change based on experience gained in implementing the RFC production center's toolset. Revised documents will be published capturing those changes as the toolset is completed. Other implementers must not expect those changes to remain backwards-compatible with the details described in this document.</t>
+<t>The details included in this document are expected to change based on
+experience gained in implementing the new publication toolsets. Revised
+documents will be published capturing those changes as the toolsets are
+completed. Other implementers must not expect those changes to remain
+backwards compatible with the details included in this document.</t> 
 
 
 </section>
@@ -117,7 +121,7 @@ in this document.  They are:
 expected results and support appropriate Unicode string matching
 behaviors; </t>
 
-  <t>RFCs must be able to display correctly across a wide range of
+  <t>RFCs must be able to be displayed correctly across a wide range of
 readers and browsers.  People whose systems do not have the fonts needed to
 display a particular RFC need to be able to read the various publication 
 formats and the XML correctly in order to understand and implement the 
@@ -139,9 +143,9 @@ characters, ask for a set of reviewers to verify the meaning, spelling,
 characters, and grammar of the text.
 </t>
 
-<section title="General Usage Throughout a Document">
+<section title="General Usage throughout a Document">
 <t>
-Where the use of non-ASCII characters is purely as part of an example
+Where the use of non-ASCII characters is purely part of an example
 and not otherwise required for correct protocol operation, escaping 
 the non-ASCII character is not required.  Note, however, that as the 
 language of the RFC Series is English, the use of non-ASCII characters 
@@ -154,16 +158,18 @@ The RFC Editor will use the primary spelling listed in that dictionary
 by default.
 </t>
 <t>Example of non-ASCII characters that do not require escaping
-(the example from Section 3.1.1.12 of RFC4475, with a hex dump
-replaced by the actual character glyphs) <xref target="RFC4475"/>:
+(example from Section 3.1.1.12 of RFC 4475 <xref target="RFC4475"/>, with a hex dump
+replaced by the actual character glyphs):
 
 <figure>
 <artwork><![CDATA[
-This particular response contains unreserved and non-ascii
+This particular response contains unreserved and non-ASCII
 UTF-8 characters.
 This response is well formed.  A parser must accept this message.
+
 Message Details : unreason
-SIP/2.0 200 = 2**3 * 5**2 но сто девяносто девять - простое
+
+SIP/2.0 200 = 2**3 * 5**2 (See PDF for non-ASCII character string)
 Via: SIP/2.0/UDP 192.0.2.198;branch=z9hG4bK1324923
 Call-ID: unreason.1234ksdfak3j2erwedfsASdf
 CSeq: 35 INVITE
@@ -177,23 +183,40 @@ Content-Type: application/sdp
 
 <section title="Person Names">
 <t>
-Person names may appear in several places within an RFC. When a script 
-outside the Unicode Latin blocks is used for a person name, an
+Person names may appear in several places within an RFC (e.g., the header, Acknowledgements, and References). When a script 
+outside the Unicode Latin blocks <xref target="UNICODE-CHART"/> is used for an
+individual name, an
 author-provided, ASCII-only identifier will appear immediately after the
 non-Latin characters, surrounded by parentheses. This will improve general
-readability of the text. <xref target="UNICODE-CHART"/>.
+readability of the text.
 </t>
 
-<t>Example for the header:</t>
+<t>Example header:</t>
+<t>OLD:</t>
 
+<figure>
+<artwork><![CDATA[                                                                       
+
+Internet Engineering Task Force (IETF)                       J. Tong
+Request for Comments: 7380                                C. Bi, Ed.
+Category: Standards Track                              China Telecom
+ISSN: 2070-1721                                              R. Even
+                                                          Q. Wu, Ed.
+                                                            R. Huang
+                                                              Huawei
+                                                       November 2014
+]]></artwork>
+</figure>
+
+<t>PROPOSED/NEW:</t>
 <figure>
 <artwork><![CDATA[
 
 Internet Engineering Task Force (IETF)                       J. Tong
 Request for Comments: 7380                                C. Bi, Ed.
 Category: Standards Track                              China Telecom
-ISSN: 2070-1721                                   רוני אבן (R. Even)
-                                                   吴钦 (Q. Wu), Ed.
+ISSN: 2070-1721   (See PDF for non-ASCII character string) (R. Even)
+               (See PDF for non-ASCII character string) (Q. Wu), Ed.
                                                             R. Huang
                                                               Huawei
                                                        November 2014
@@ -203,21 +226,22 @@ ISSN: 2070-1721                                   רוני אבן (R. Even)
 
 
 <t>
-Example for the Acknowledgements:
+Example Acknowledgements section:
 </t>
+<t>OLD:</t>
 <t>
-OLD:
 The following people contributed significant text to early versions of
 this draft: Patrik Faltstrom, William Chan, and Fred Baker.
 </t>
 <t>
-PROPOSED/NEW:
-The following people contributed significant text to early versions of
-this draft: Patrik Fältström, 陈智昌 (William Chan),
-and Fred Baker.
+PROPOSED/NEW:</t>
+<t>
+The following people contributed significant text to early versions of this
+draft: Patrik (See PDF for non-ASCII character string) (Patrik Faltstrom), (See
+PDF for non-ASCII character string) (William Chan), and Fred Baker.
 </t>
 
-<t>Example for References:</t>
+<t>Example reference entry:</t>
 <t>OLD:</t>
 <figure><artwork><![CDATA[
    [RFC6630]  Cao, Z., Deng, H., Wu, Q., and G. Zorn, Ed., "EAP
@@ -228,7 +252,8 @@ and Fred Baker.
 
 <t>NEW</t>
 <figure><artwork><![CDATA[
-   [RFC6630]  Cao, Z., Deng, H.,  吴钦 (Wu, Q.), and G. Zorn, Ed., "EAP
+   [RFC6630]  Cao, Z., Deng, H., (See PDF for non-ASCII character 
+              string) (Wu, Q.), and G. Zorn, Ed., "EAP
               Re-authentication Protocol Extensions for Authenticated
               Anticipatory Keying (ERP/AAK)", RFC 6630, June 2012.
 ]]></artwork>
@@ -239,8 +264,8 @@ and Fred Baker.
 <t>
 Company names may appear in several places within an RFC. In all
 cases, valid Unicode is required. For names that include characters
-outside of the Unicode Latin and Latin Extended script, an
-author-provided, ASCII-only identifier is required to assist in search
+outside of the Unicode Latin and Latin Extended scripts, an
+author-provided, ASCII-only identifier is required to assist in searching
 and indexing of the document.
 </t>
 </section>
@@ -248,15 +273,16 @@ and indexing of the document.
 <section anchor="botd" title="Body of the Document">
 <t>
 When the mention of non-ASCII characters is required for correct
-protocol operation and understanding, the characters' Unicode character
-name or code point MUST be included in the text.
+ protocol operation and understanding, the characters' Unicode code 
+ points must be used in the text. The addition of each character name 
+ is encouraged.
 </t>
 
 <t><list style="symbols">
   <t>Non-ASCII characters will require identifying the Unicode code
 point.</t>
 
-  <t>Use of the actual UTF-8 character (e.g., Δ) is encouraged so that
+  <t>Use of the actual UTF-8 character (e.g., (See PDF for non-ASCII character string)) is encouraged so that
 a reader can more easily see what the character is, if their device can
 render the text.</t>
 
@@ -274,8 +300,9 @@ used, Unicode character names should be in all capital letters.</t>
 However, the problem is made more serious by introducing the full 
 range of Unicode code points into protocol strings.  For example, 
 the characters U+13DA U+13A2 U+13B5 U+13AC U+13A2 U+13AC U+13D2 from 
-the Cherokee block look similar to the ASCII characters  "STPETER" as 
-they might appear when presented using a "creative" font family.
+the Cherokee block look similar to the ASCII characters 
+"STPETER" as they might appear when presented using a "creative" 
+font family.
 ]]></artwork>
 </figure>
 
@@ -286,9 +313,9 @@ they might appear when presented using a "creative" font family.
 However, the problem is made more serious by introducing the full 
 range of Unicode code points into protocol strings.  For example, 
 the characters U+13DA U+13A2 U+13B5 U+13AC U+13A2 U+13AC U+13D2 
-(ᏚᎢᎵᎬᎢᎬᏒ) from the Cherokee block look similar to the ASCII 
-characters "STPETER" as they might appear when presented using a 
-"creative" font family.
+((See PDF for non-ASCII character string)) from the Cherokee 
+block look similar to the ASCII characters "STPETER" as they might 
+appear when presented using a "creative" font family.
 ]]></artwork>
 </figure>
 
@@ -298,10 +325,10 @@ characters "STPETER" as they might appear when presented using a
 <artwork><![CDATA[
 However, the problem is made more serious by introducing the full 
 range of Unicode code points into protocol strings.  For example, 
-the characters "ᏚᎢᎵᎬᎢᎬᏒ" (U+13DA U+13A2 U+13B5 U+13AC U+13A2 
-U+13AC U+13D2) from the Cherokee block look similar to the ASCII 
-characters "STPETER" as they might appear when presented using a 
-"creative" font family.
+the characters "(See PDF for non-ASCII character string)" (U+13DA 
+U+13A2 U+13B5 U+13AC U+13A2 U+13AC U+13D2) from the Cherokee block 
+look similar to the ASCII characters "STPETER" as they might 
+appear when presented using a "creative" font family.
 ]]></artwork>
 </figure>
 
@@ -318,45 +345,46 @@ by the U+2206 character.</t>
 
 <t><list style="numbers">
   <t>Temperature changes in the Temperature Control Protocol are
-indicated by the U+2206 character ("Δ").</t>
+indicated by the U+2206 character ("(See PDF for non-ASCII character string)").</t>
 
   <t>Temperature changes in the Temperature Control Protocol are
 indicated by the U+2206 character (INCREMENT).</t>
 
   <t>Temperature changes in the Temperature Control Protocol are
-indicated by the U+2206 character ("Δ", INCREMENT).</t>
+indicated by the U+2206 character ("(See PDF for non-ASCII character string)", INCREMENT).</t>
 
   <t>Temperature changes in the Temperature Control Protocol are
-indicated by the U+2206 character (INCREMENT, "Δ").</t>
+indicated by the U+2206 character (INCREMENT, "(See PDF for non-ASCII character string)").</t>
 
   <t>Temperature changes in the Temperature Control Protocol are
-indicated by the "Delta" character "Δ" (U+2206).</t>
+indicated by the "Delta" character "(See PDF for non-ASCII character string)" (U+2206).</t>
 
   <t>Temperature changes in the Temperature Control Protocol are
-indicated by the character "Δ" (INCREMENT, U+2206).</t>
+indicated by the character "(See PDF for non-ASCII character string)" (INCREMENT, U+2206).</t>
 </list>
 </t>
 
 <t>
 Which option of (1), (2), (3), (4), (5), or (6) is preferred may depend
 on context and the specific character(s) in question.  All are acceptable 
-within an RFC.  BCP 137, "ASCII Escaping of Unicode Character" describes 
-the pros and cons of different options for identifying Unicode characters 
-in an ASCII document <xref target="BCP137">BCP137</xref>.
-</t>
+within an RFC.  "US-ASCII Escaping of Unicode Character" <xref target="BCP137"></xref> describes the pros and cons of different options for
+ identifying Unicode characters and may help authors decide how to
+ represent the non-ASCII characters in their documents.</t>
 </section>
 
 <section title="Tables">
 <t>
 Tables follow the same rules for identifiers and characters as in
 <xref target="botd">"Body of the Document"</xref>.  If it is sensible (i.e., more
-understandable for a reader) for a given document to have two tables -- 
-one including the identifiers and non-ASCII characters and a second with 
-just the non-ASCII characters -- that will be allowed on a case-by-case 
-basis.
+  understandable for a reader) for a given document to have two tables, -- 
+  one including the identifiers and non-ASCII characters and a 
+  second with just the non-ASCII characters -- then that will be allowed
+  at the discretion of the authors.
 </t>
 <t>
-Original text from "Preparation, Enforcement, and Comparison of Internationalized Strings Representing Usernames and Passwords" <xref target="RFC7613"/>.
+Original text from "Preparation, Enforcement, and Comparison of
+Internationalized Strings Representing Usernames and Passwords" <xref
+target="RFC7613"/>. 
 </t>
       <figure>
         <preamble>Table 3: A sample of legal passwords</preamble>
@@ -393,17 +421,17 @@ Original text from "Preparation, Enforcement, and Comparison of Internationalize
 +------------------------------------+------------------------------+
 | 13| <Correct Horse Battery Staple> | Different from example 12    |
 +------------------------------------+------------------------------+
-| 14| <πß๗>                          | Non-ASCII letters are OK     |
-|   |                                | (e.g., GREEK SMALL LETTER    |
+| 14| <(See PDF for non-ASCII        | Non-ASCII letters are OK     |
+|   |   character string)>           | (e.g., GREEK SMALL LETTER    |
 |   |                                | PI, U+03C0; LATIN SMALL      |
 |   |                                | LETTER SHARP S, U+00DF; THAI |
 |   |                                | DIGIT SEVEN, U+0E57)         |
 +------------------------------------+------------------------------+
-| 15| <Jack of ♦s>                   | Symbols are OK (e.g., BLACK  |
-|   |                                | DIAMOND SUIT, U+2666)        |
+| 15| <Jack of (See PDF for non-     | Symbols are OK (e.g., BLACK  |
+|   |  ASCII character string)s>     | DIAMOND SUIT, U+2666)        |
 +------------------------------------+------------------------------+
-| 16| <foo bar>                      | OGHAM SPACE MARK, U+1680, is |
-|   |                                | mapped to U+0020 and thus    |
+| 16| <foo(See PDF for non-ASCII     | OGHAM SPACE MARK, U+1680, is | 
+|   |  character string)bar>         | mapped to U+0020 and thus    |
 |   |                                | the full string is mapped to |
 |   |                                | <foo bar>                    |
 +------------------------------------+------------------------------+
@@ -414,25 +442,26 @@ Original text from "Preparation, Enforcement, and Comparison of Internationalize
 <section title="Code Components">
 <t>
 The RFC Editor encourages the use of the U+ notation except within a
-code component where you must follow the rules of the programming
-language in which you are writing the code.
+code component where one must follow the rules of the programming
+language in which the code is being written.
 </t>
 <t>
 Code components are generally expected to use fixed-width fonts. Where
-such fonts are not available for a particular script, the best script-
-appropriate font will be used for that part of the code component.
+such fonts are not available for a particular script, the best script-appropriate font will be used for that part of the code component.
 </t>
 </section>
 
 <section title="Bibliographic Text">
 <t>
 The reference entry must be in English; whatever subfields are present
-must be available in ASCII-encoded characters. For references to RFCs
-and Internet Drafts, the author's name will be included in the reference
-as listed on the front header of the RFC or Internet Draft. As long as 
+must be available in ASCII-encoded characters. For references to RFCs and Internet-Drafts, the author's name will be
+formatted in the reference as per current RFC Style Guide recommendations.
+
+As long as 
 good sense is used, the reference entry may also include non-ASCII 
 characters at the author's discretion and as provided by the author.  
-The RFC Editor may request a review of any non-ASCII reference entry.
+The RFC Editor may request that a third party, such as a language
+specialist or subject matter expert, review of any non-ASCII reference.
 
 This applies to both normative and informative references.
 </t>
@@ -448,17 +477,14 @@ This applies to both normative and informative references.
            Russia for Standards, 2001. (In Russian)
 
 Allowable addition to the above citation:
-           "Информационная технология. Криптографическая защита
-           информации. Процессы формирования и проверки
-           электронной цифровой подписи", GOST R 34.10-2001,
-           Государственный стандарт Российской Федерации, 2001.
+           (See PDF for non-ASCII character strings)
 
 Alternatively:
 [GOST3410] "Information technology. Cryptographic data security.
            Signature and verification processes of [electronic]
            digital signature.", GOST R 34.10-2001, Gosudarstvennyi
-           Standard of Russian Federation, Правительственная комиссия 
-           России по стандартам (Government Committee of
+           Standard of Russian Federation, (See PDF for non-ASCII 
+           character strings) (Government Committee of
            Russia for Standards), 2001. (In Russian)
 ]]></artwork>
 </figure>
@@ -467,16 +493,16 @@ Alternatively:
 
 <section title="Keywords and Citation Tags">
 <t>
-Keywords (as tagged with the &lt;keyword&gt;  element in XML), and citation 
-tags (as defined in the anchor attributes of &lt;reference&gt; elements) must be 
-ASCII only.
+Keywords (as tagged with the &lt;keyword&gt;  element in XML) and citation 
+tags (as defined in the anchor attributes of &lt;reference&gt; elements) must 
+contain only ASCII characters.
 </t>
 </section>
 
 <section title="Address Information">
 <t>
-The purpose of providing address information, either postal or e-mail,
-is to assist readers of an RFC to contact the author or authors.  Authors 
+The purpose of providing address information, either postal or email,
+is to assist readers of an RFC in contacting the author or authors.  Authors 
 may include the official postal address as recognized by their company or 
 local postal service without additional non-ASCII character escapes.  If 
 the email address includes non-ASCII characters and is a valid email 
@@ -493,13 +519,9 @@ required.
   Nanjing, Jiangsu  210012
   China
 
-Alternate contact information:
-  吴钦 (editor)
-  华为技术有限公司
-  雨花区软件大道101号
-  江苏南京 210012
-  中国
- 
+Additional contact information:
+  (See PDF for non-ASCII character strings)
+
 ------
 
   Roni Even
@@ -508,45 +530,35 @@ Alternate contact information:
   Tel Aviv  64953
   Israel
 
-Alternate contact information:
-   רוני אבן    
-  וואווי
-  דוד המלך 14   
-  תל אביב 64953   
-  ישראל   
+Additional contact information:
+   (See PDF for non-ASCII character strings)
 ]]></artwork>
 </figure>
+
 </section>
 </section>
 
 <section title="Normalization Forms">
 <t>
-Authors should not expect normalization forms to be preserved. If a
+Authors should not expect normalization forms <xref target="UNICODE-NORM"/>to be preserved. If a
 particular normalization form is expected, note that in the text of the
 RFC.
 </t>
+
 </section>
 
 <section title="XML Markup">
 <t>As described above, use of non-ASCII characters in areas such as
-email, company name, addresses, and name is allowed. In order to make it 
+email, company name, address, and name is allowed. In order to make it 
 easier for code to identify the appropriate ASCII alternatives, authors
 must include an "ascii" attribute to their XML markup when an ASCII 
-alternative is required.  See <xref target="I-D.iab-xml2rfc"/> for 
+alternative is required.  See <xref target="RFC7991"/> for 
 more detail on how to tag ASCII alternatives.
 </t>
 </section>
 
 
-<section title="IANA Considerations">
-<t>
-This document makes no request of IANA.
-</t>
-<t>
-Note to RFC Editor: this section may be removed on publication as an
-RFC.
-</t>
-</section>
+
 
 <section title="Internationalization Considerations">
 <t>
@@ -564,49 +576,53 @@ to preserve expected behavior and protocol information.
 </t>
 </section>
 
-<section title="Change log - to be removed by the RFC Editor">
-<section title="draft-iab-rfc-nonascii-01 to -02">
-<t>Authors, Contributors: section renamed "Person names", text simplified, example of a reference added.</t>
-<t>Bibliographic Text: added an alternate example for a reference with non-ASCII characters.</t>
-</section>
-<section title="draft-iab-rfc-nonascii-00 to -01">
-<t>Code Components: added fixed-width font clarification</t>
-<t>Authors, Bibliographic info: Clarified requirements for full name, how name will be displayed</t>
-</section>
-<section title="draft-flanagan-nonascii to draft-iab-rfc-nonascii-00">
-<t>Changed requirement for all nonASCII names (including company names) to require an ASCII equivalent to requiring it only for non-Latin characters. Extended Latin is also acceptable without an ASCII equivalent.</t>
-</section>
-<section title="-04 to -05">
-<t>Keywords: expanded section to include citation tags.</t>
-<t>Internationalization considerations: reiterated that the use of non-ASCII 
-characters is not automatically guaranteed.</t>
-</section>
-<section title="-04 to -05">
-<t>Introduction: added statement regarding document subject to change.</t>
-<t>Tables: added example.</t>
-<t>Code: removed placeholder for example.</t>
-</section>
-<section title="-02 to -04">
-<t>Introduction and Abstract: change to be clearer about what/why non-ASCII
-   characters are being allowed.</t>
-<t>XML Markup: section added.</t>
-</section>
-</section>
+
 
 </middle>
 
 <back>
 
-<references title="References">
+<references title="Informative References">
 
-&RFC0020;
-&STD64;
+
+<reference  anchor='RFC20' target='http://www.rfc-editor.org/info/rfc20'>
+<front>
+<title>ASCII format for network interchange</title>
+<author initials='V.G.' surname='Cerf' fullname='V.G. Cerf'><organization /></author>
+<date year='1969' month='October' />
+</front>
+<seriesInfo name='STD' value='80'/>
+<seriesInfo name='RFC' value='20'/>
+<seriesInfo name='DOI' value='10.17487/RFC0020'/>
+</reference>
+
+
 &RFC4475;
-&RFC6949;
 &RFC7322;
 &RFC7564;
 &RFC7613;
-&I-D.iab-xml2rfc;
+
+
+<!--&I-D.iab-xml2rfc; companion document RFC 7991-->
+
+<reference anchor='RFC7991' target='http://www.rfc-editor.org/info/rfc7991'>
+<front>
+<title>The "xml2rfc" Version 3 Vocabulary</title>
+
+<author initials='P' surname='Hoffman' fullname='Paul Hoffman'>
+    <organization />
+</author>
+
+<date month='December' year='2016' />
+
+<abstract><t>This document defines the "xml2rfc" version 3 vocabulary: an XML- based language used for writing RFCs and Internet-Drafts.  It is heavily derived from the version 2 vocabulary that is also under discussion.  This document obsoletes the v2 grammar described in RFC 2629 and its followup, RFC 7749.  Editorial Note (To be removed by RFC Editor)  Discussion of this draft takes place on the rfc-interest mailing list (rfc-interest@rfc-editor.org), which has its home page at &lt;https://www.rfc-editor.org/mailman/listinfo/rfc-interest>.</t></abstract>
+
+</front>
+
+<seriesInfo name='RFC' value='7991' />
+<seriesInfo name="DOI" value="10.17487/RFC7991"/>
+</reference>
+
 
 <reference anchor="BCP137" target="http://www.rfc-editor.org/info/bcp137">
  <front>
@@ -619,41 +635,87 @@ characters is not automatically guaranteed.</t>
   <seriesInfo name='BCP' value='137'/>
   <seriesInfo name='RFC' value='5137'/>
 </reference>
+
+
 <reference anchor="MerrWeb">
   <front>
     <title>Merriam-Webster's Collegiate Dictionary, 11th Edition</title>
     <author>
-      <organization>Merriam-Webster,Inc.</organization>
+      <organization>Merriam-Webster, Inc.</organization>
     </author>
     <date year="2009" />
   </front>
 </reference>
+
+
 <reference anchor="UnicodeCurrent" target="http://www.unicode.org/versions/latest/">
   <front>
     <title>The Unicode Standard</title>
     <author>
       <organization>The Unicode Consortium</organization>
     </author>
-    <date year="2014-present"/>
+    <date/>
   </front>
 </reference>
+
 <reference anchor="UNICODE-CHART" target="http://www.unicode.org/charts">
   <front>
     <title>The Unicode Standard</title>
     <author>
       <organization>The Unicode Consortium</organization>
     </author>
-    <date year="2014-present"/>
+    <date />
   </front>
 </reference>
+
+
+<reference anchor="UNICODE-NORM" target="http://www.unicode.org/reports/tr15/">
+  <front>
+    <title>Unicode Standard Annex #15: Unicode Normalization Forms</title>
+    <author>
+      <organization>The Unicode Consortium</organization>
+    </author>
+    <date year="2016"/>
+  </front>
+</reference>
+
+
+
 </references>
 
+  <section title="IAB Members at the Time of Approval" numbered="no">
 
-<section title="Acknowledgements">
+  <t>The IAB members at the time this memo was approved were (in alphabetical order):                                                       
+
+<?rfc subcompact="yes" ?>
+<list>
+ <t>Jari Arkko</t>
+ <t>Ralph Droms</t>
+ <t>Ted Hardie</t>
+ <t>Joe Hildebrand</t>
+ <t>Russ Housley</t>
+<t>Lee Howard</t>
+ <t>Erik Nordmark</t>
+ <t>Robert Sparks</t>
+ <t>Andrew Sullivan</t>
+ <t>Dave Thaler</t>
+<t>Martin Thomson</t>
+ <t>Brian Trammell</t>
+ <t>Suzanne Woolf</t>
+</list>
+<?rfc subcompact="no" ?>
+  </t>
+  </section>
+
+<section title="Acknowledgements" numbered="no">
 <t>
-With many thanks to the members of the IAB i18n program and the RFC Format 
-Design Team.
+With many thanks to the members of the IAB i18n program.  Also, many thanks to
+the RFC Format Design Team for their efforts in making this transition
+successful: Nevil Brownlee (ISE), Tony Hansen, Joe Hildebrand, Paul Hoffman,
+Ted Lemon, Julian Reschke, Adam Roach, Alice Russo, Robert Sparks (Tools Team
+liaison), and Dave Thaler.
 </t>
+
 </section>
 </back>
 
